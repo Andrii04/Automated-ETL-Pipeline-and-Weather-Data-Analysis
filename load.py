@@ -7,10 +7,10 @@ from db_config import DB_CONFIG
 
 def load_data():
 
-    dataFrames = clean_data()
-    df_raw = dataFrames["df_raw"]
-    df_daily = dataFrames["df_daily"]
-    df_hourly = dataFrames["df_hourly"]
+    # Read cleaned CSVs
+    df_raw = pd.read_csv("romeWeather.csv")
+    df_daily = pd.read_csv("romeWeatherDaily.csv")
+    df_hourly = pd.read_csv("romeWeatherHourly.csv")
 
     try:
 

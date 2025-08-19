@@ -1,4 +1,5 @@
 import requests as rq
+import json
 from db_config import API_KEY
 
 def extract_data():
@@ -12,4 +13,6 @@ def extract_data():
     response = rq.get(url)
     data = response.json()
     
-    return data
+    # Save raw data to file for downstream tasks
+    with open("raw_data.json", "w") as f:
+        json.dump(data, f)

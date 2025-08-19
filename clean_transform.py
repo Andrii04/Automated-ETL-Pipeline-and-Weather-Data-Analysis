@@ -5,7 +5,9 @@ from extract import extract_data
 
 def clean_data():
 
-    data = extract_data()
+    # Read raw data from file
+    with open("raw_data.json") as f:
+        data = json.load(f)
 
     # Handle the case where data is a dictionary
     if isinstance(data, dict):
@@ -76,7 +78,3 @@ def clean_data():
             df_daily[col] = data.get(col)
         # Save daily DataFrame to CSV
         df_daily.to_csv("romeWeatherDaily.csv")
-
-    return {"df_raw" : df,
-            "df_daily" : df_daily,
-            "df_hourly" : df_hourly}
