@@ -1,0 +1,28 @@
+# Python bytecode and environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+*.egg
+
+# VSCode settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data files
+*.sqlite
+*.db
+*.log
+
+# Config and secrets
+/db_config.py
