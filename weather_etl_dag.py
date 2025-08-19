@@ -1,5 +1,5 @@
 from airflow import DAG
-from airflow.operators import PythonOperator
+from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
 from extract import extract_data
@@ -16,14 +16,14 @@ with DAG(
     dag_id="weather_etl_pipeline",
     default_args=default_args,
     description="Automated ETL for weather data",
-    schedule_interval="0 21 * * *",
+    schedule="0 7 * * *",
     start_date=datetime(2025, 8, 19),
     catchup=False
 ) as dag:
     
     extract_task = PythonOperator(
         task_id="extract_data",
-        python_callable=clean_data
+        python_callable=extract_data
     )
 
     clean_task = PythonOperator(
