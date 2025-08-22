@@ -62,6 +62,7 @@ Example questions that can be addressed include:
 - `db_config.py`: Stores database and API credentials
 - `romeWeather.csv`, `romeWeatherHourly.csv`, `romeWeatherDaily.csv`: Example output datasets
 - `raw_data.json`: Example raw data file
+- `airflow_etl_pipeline.png`: Example of DAG run in Airflow
 - `README.md`: Project documentation
 
 ## Data Source
