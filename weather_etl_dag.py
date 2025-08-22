@@ -37,5 +37,3 @@ with DAG(
     )
 
     extract_task >> clean_task >> load_task
-
-
